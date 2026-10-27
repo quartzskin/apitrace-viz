@@ -1,0 +1,30 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  viz:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - run: node viz/cli.js samples/trace.jsonl -o samples/trace.html
+
+  toy:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake -S . -B build
+      - run: cmake --build build --config Release
+      - name: run toy and import its trace
+        shell: bash
+        run: |
+          mkdir run && cd run
+          exe=$(find ../build -name toy.exe | head -n 1)
+          "$exe" trace.jsonl
+          node ../viz/cli.js trace.jsonl -o trace.html
