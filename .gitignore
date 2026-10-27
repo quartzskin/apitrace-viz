@@ -1,0 +1,8 @@
+build/
+toy-work/
+node_modules/
+samples/*.html
+/trace.jsonl
+/trace.html
+*.exe
+scratch/
