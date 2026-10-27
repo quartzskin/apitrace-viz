@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{TITLE}}</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 13px/1.4 system-ui, sans-serif; }
+  header { padding: 10px 16px; border-bottom: 1px solid #aaa; display: flex; gap: 16px; align-items: baseline; }
+  header h1 { font-size: 16px; margin: 0; }
+  #meta { color: #555; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 16px; align-items: center; }
+  input[type=search] { width: 240px; }
+  #chips { display: flex; flex-wrap: wrap; gap: 6px 12px; padding: 0 16px 8px; }
+  .chip { display: inline-flex; align-items: center; gap: 5px; }
+  .chip input { margin: 0; }
+  .sw { width: 10px; height: 10px; display: inline-block; }
+  #parse-errors { margin: 0 16px 8px; padding: 6px 10px; background: #fff3cd; border: 1px solid #aaa; }
+  #parse-errors summary { cursor: pointer; }
+  .layout { display: grid; grid-template-columns: 240px 1fr; gap: 12px; padding: 0 16px 16px; }
+  .panel { border: 1px solid #aaa; }
+  .panel h2 { margin: 0; padding: 6px 10px; font-size: 12px; text-transform: uppercase; border-bottom: 1px solid #aaa; }
+  .proc { padding: 3px 10px; cursor: pointer; white-space: nowrap; }
+  .proc:hover { background: #e8e8e8; }
+  small { color: #555; }
+  #timeline { display: flex; overflow: hidden; max-height: 360px; overflow-y: auto; }
+  .labels { flex: none; width: 170px; border-right: 1px solid #aaa; }
+  .lane-label { padding: 0 8px; line-height: 24px; white-space: nowrap; }
+  .svgwrap { overflow-x: auto; flex: 1; }
+  svg text.tick { fill: #555; font-size: 10px; }
+  svg line.grid { stroke: #ccc; }
+  svg rect.band { fill: #fff; }
+  svg rect.band.alt { fill: #f3f3f3; }
+  svg rect.ev { cursor: pointer; }
+  svg rect.ev.err { stroke: #c00; stroke-width: 1.5; }
+  svg rect.ev.sel { stroke: #000; stroke-width: 2; }
+  .empty { padding: 24px; color: #555; }
+  #detail { margin: 0; padding: 8px 10px; font: 12px Consolas, monospace; white-space: pre-wrap; min-height: 90px; }
+  .tablewrap { max-height: 380px; overflow: auto; }
+  table { border-collapse: collapse; width: 100%; }
+  th { position: sticky; top: 0; background: #fff; text-align: left; padding: 4px 8px; border-bottom: 1px solid #aaa; }
+  td { padding: 2px 8px; border-bottom: 1px solid #ddd; white-space: nowrap; max-width: 420px; overflow: hidden; text-overflow: ellipsis; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: #eee; }
+  tr.selrow { background: #dde8ff; }
+  tr.errrow .api { color: #c00; }
+  .badge { padding: 0 6px; font-size: 11px; }
+  .args { color: #555; }
+  .stack { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+</style>
+</head>
+<body>
+<header><h1>{{TITLE}}</h1><span id="meta"></span></header>
+<div class="toolbar">
+  <input type="search" id="search" placeholder="search api, path, key, value...">
+  <select id="pid"></select>
+  <select id="tid"></select>
+  <label><input type="checkbox" id="errs"> errors only</label>
+  <label>zoom <input type="range" id="zoom" min="1" max="60" value="1"></label>
+  <button id="exp-jsonl">export JSONL</button>
+  <button id="exp-csv">export CSV</button>
+  <button id="reset">reset</button>
+</div>
+<div id="chips"></div>
+<details id="parse-errors" hidden></details>
+<div class="layout">
+  <div class="panel"><h2>Processes</h2><div id="tree"></div></div>
+  <div class="stack">
+    <div class="panel"><h2>Timeline</h2><div id="timeline"></div></div>
+    <div class="panel"><h2>Selected call</h2><pre id="detail">click an event in the timeline or table</pre></div>
+    <div class="panel">
+      <h2>Calls - <span id="count"></span></h2>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>time</th><th>pid/tid</th><th>api</th><th>category</th><th>args</th><th>return</th><th>err</th><th>duration</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script id="trace-data" type="application/json">{{DATA}}</script>
+<script>
+{{FILTER_JS}}
+</script>
+<script>
+{{PAGE_JS}}
+</script>
+</body>
+</html>

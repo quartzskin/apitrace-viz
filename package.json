@@ -1,0 +1,12 @@
+{
+  "name": "apitrace-viz",
+  "version": "0.1.0",
+  "description": "Turn JSONL Win32 call traces into a standalone HTML timeline",
+  "license": "MIT",
+  "private": true,
+  "bin": { "apitrace-viz": "viz/cli.js" },
+  "scripts": {
+    "test": "node --test \"viz/test/*.test.js\"",
+    "sample": "node viz/cli.js samples/trace.jsonl -o samples/trace.html"
+  }
+}

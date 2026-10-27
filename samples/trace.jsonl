@@ -1,0 +1,49 @@
+{"ts":1791999566489462,"pid":10680,"ppid":14720,"tid":23400,"api":"GetModuleFileNameA","cat":"system","args":{},"ret":60,"err":0,"dur_us":3}
+{"ts":1791999566489570,"pid":10680,"ppid":14720,"tid":23400,"api":"GetCurrentProcessId","cat":"process","args":{},"ret":10680,"err":0,"dur_us":0}
+{"ts":1791999566489589,"pid":10680,"ppid":14720,"tid":23400,"api":"GetTickCount64","cat":"time","args":{},"ret":336935031,"err":0,"dur_us":1}
+{"ts":1791999566489599,"pid":10680,"ppid":14720,"tid":23400,"api":"GetSystemInfo","cat":"system","args":{},"ret":16,"err":0,"dur_us":3}
+{"ts":1791999566489620,"pid":10680,"ppid":14720,"tid":23400,"api":"GetEnvironmentVariableA","cat":"system","args":{"name":"NUMBER_OF_PROCESSORS"},"ret":2,"err":0,"dur_us":6}
+{"ts":1791999566489919,"pid":10680,"ppid":14720,"tid":23400,"api":"CreateDirectoryA","cat":"file","args":{"path":"toy-work"},"ret":1,"err":0,"dur_us":258}
+{"ts":1791999566490190,"pid":10680,"ppid":14720,"tid":23400,"api":"CreateFileA","cat":"file","args":{"path":"toy-work\\data.bin","access":"GENERIC_READ|GENERIC_WRITE","disposition":"CREATE_ALWAYS"},"ret":"0xd4","err":0,"dur_us":154}
+{"ts":1791999566490371,"pid":10680,"ppid":14720,"tid":23400,"api":"WriteFile","cat":"file","args":{"bytes":256},"ret":1,"err":0,"dur_us":39}
+{"ts":1791999566490417,"pid":10680,"ppid":14720,"tid":23400,"api":"WriteFile","cat":"file","args":{"bytes":256},"ret":1,"err":0,"dur_us":9}
+{"ts":1791999566490430,"pid":10680,"ppid":14720,"tid":23400,"api":"WriteFile","cat":"file","args":{"bytes":256},"ret":1,"err":0,"dur_us":213}
+{"ts":1791999566490652,"pid":10680,"ppid":14720,"tid":23400,"api":"WriteFile","cat":"file","args":{"bytes":256},"ret":1,"err":0,"dur_us":2}
+{"ts":1791999566490658,"pid":10680,"ppid":14720,"tid":23400,"api":"FlushFileBuffers","cat":"file","args":{},"ret":1,"err":0,"dur_us":1168}
+{"ts":1791999566491848,"pid":10680,"ppid":14720,"tid":23400,"api":"SetFilePointer","cat":"file","args":{"offset":0,"method":"FILE_BEGIN"},"ret":0,"err":0,"dur_us":5}
+{"ts":1791999566491857,"pid":10680,"ppid":14720,"tid":23400,"api":"GetFileSize","cat":"file","args":{},"ret":1024,"err":0,"dur_us":3}
+{"ts":1791999566491865,"pid":10680,"ppid":14720,"tid":23400,"api":"ReadFile","cat":"file","args":{"requested":512},"ret":1,"err":0,"dur_us":5}
+{"ts":1791999566491874,"pid":10680,"ppid":14720,"tid":23400,"api":"CloseHandle","cat":"file","args":{},"ret":1,"err":0,"dur_us":59}
+{"ts":1791999566491943,"pid":10680,"ppid":14720,"tid":23400,"api":"CreateFileA","cat":"file","args":{"path":"toy-work\\does-not-exist.txt","access":"GENERIC_READ","disposition":"OPEN_EXISTING"},"ret":"0xffffffffffffffff","err":2,"dur_us":52}
+{"ts":1791999566492010,"pid":10680,"ppid":14720,"tid":23400,"api":"RegOpenKeyExA","cat":"registry","args":{"key":"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion","access":"KEY_READ"},"ret":0,"err":0,"dur_us":39}
+{"ts":1791999566492055,"pid":10680,"ppid":14720,"tid":23400,"api":"RegQueryValueExA","cat":"registry","args":{"value":"ProductName"},"ret":0,"err":0,"dur_us":10}
+{"ts":1791999566492070,"pid":10680,"ppid":14720,"tid":23400,"api":"RegQueryValueExA","cat":"registry","args":{"value":"NoSuchValue"},"ret":2,"err":0,"dur_us":2}
+{"ts":1791999566492076,"pid":10680,"ppid":14720,"tid":23400,"api":"RegCloseKey","cat":"registry","args":{},"ret":0,"err":0,"dur_us":6}
+{"ts":1791999566492088,"pid":10680,"ppid":14720,"tid":23400,"api":"VirtualAlloc","cat":"memory","args":{"size":65536,"protect":"PAGE_READWRITE"},"ret":"0x261755b0000","err":0,"dur_us":7}
+{"ts":1791999566492118,"pid":10680,"ppid":14720,"tid":23400,"api":"VirtualFree","cat":"memory","args":{"type":"MEM_RELEASE"},"ret":1,"err":0,"dur_us":16}
+{"ts":1791999566492140,"pid":10680,"ppid":14720,"tid":23400,"api":"CreateThread","cat":"thread","args":{"start":"worker"},"ret":"0xd8","err":0,"dur_us":33}
+{"ts":1791999566492249,"pid":10680,"ppid":14720,"tid":22960,"api":"CreateFileA","cat":"file","args":{"path":"toy-work\\worker.log","access":"GENERIC_WRITE","disposition":"CREATE_ALWAYS"},"ret":"0xdc","err":0,"dur_us":251}
+{"ts":1791999566492516,"pid":10680,"ppid":14720,"tid":22960,"api":"WriteFile","cat":"file","args":{"bytes":15},"ret":1,"err":0,"dur_us":58}
+{"ts":1791999566492179,"pid":10680,"ppid":14720,"tid":23400,"api":"Sleep","cat":"time","args":{"ms":20},"ret":0,"err":0,"dur_us":31202}
+{"ts":1791999566492584,"pid":10680,"ppid":14720,"tid":22960,"api":"Sleep","cat":"time","args":{"ms":15},"ret":0,"err":0,"dur_us":30798}
+{"ts":1791999566523492,"pid":10680,"ppid":14720,"tid":22960,"api":"WriteFile","cat":"file","args":{"bytes":15},"ret":1,"err":0,"dur_us":58}
+{"ts":1791999566523560,"pid":10680,"ppid":14720,"tid":22960,"api":"Sleep","cat":"time","args":{"ms":15},"ret":0,"err":0,"dur_us":15623}
+{"ts":1791999566539237,"pid":10680,"ppid":14720,"tid":22960,"api":"WriteFile","cat":"file","args":{"bytes":15},"ret":1,"err":0,"dur_us":35}
+{"ts":1791999566539279,"pid":10680,"ppid":14720,"tid":22960,"api":"Sleep","cat":"time","args":{"ms":15},"ret":0,"err":0,"dur_us":15717}
+{"ts":1791999566555057,"pid":10680,"ppid":14720,"tid":22960,"api":"CloseHandle","cat":"file","args":{},"ret":1,"err":0,"dur_us":149}
+{"ts":1791999566523486,"pid":10680,"ppid":14720,"tid":23400,"api":"WaitForSingleObject","cat":"thread","args":{"target":"worker thread","timeout_ms":2000},"ret":0,"err":0,"dur_us":31804}
+{"ts":1791999566555307,"pid":10680,"ppid":14720,"tid":23400,"api":"CloseHandle","cat":"thread","args":{},"ret":1,"err":0,"dur_us":3}
+{"ts":1791999566555315,"pid":10680,"ppid":14720,"tid":23400,"api":"Sleep","cat":"time","args":{"ms":25},"ret":0,"err":0,"dur_us":30293}
+{"ts":1791999566585657,"pid":10680,"ppid":14720,"tid":23400,"api":"CreateProcessA","cat":"process","args":{"cmdline":"toy.exe --child"},"ret":1,"err":0,"dur_us":4125}
+{"ts":1791999566596843,"pid":1484,"ppid":10680,"tid":17492,"api":"CreateFileA","cat":"file","args":{"path":"toy-work\\child.txt","access":"GENERIC_WRITE","disposition":"CREATE_ALWAYS"},"ret":"0xe4","err":0,"dur_us":241}
+{"ts":1791999566597120,"pid":1484,"ppid":10680,"tid":17492,"api":"WriteFile","cat":"file","args":{"bytes":22},"ret":1,"err":0,"dur_us":48}
+{"ts":1791999566597204,"pid":1484,"ppid":10680,"tid":17492,"api":"CloseHandle","cat":"file","args":{},"ret":1,"err":0,"dur_us":40}
+{"ts":1791999566597253,"pid":1484,"ppid":10680,"tid":17492,"api":"Sleep","cat":"time","args":{"ms":10},"ret":0,"err":0,"dur_us":19239}
+{"ts":1791999566589805,"pid":10680,"ppid":14720,"tid":23400,"api":"WaitForSingleObject","cat":"process","args":{"target":"child process","timeout_ms":5000},"ret":0,"err":0,"dur_us":34439}
+{"ts":1791999566624274,"pid":10680,"ppid":14720,"tid":23400,"api":"GetExitCodeProcess","cat":"process","args":{},"ret":1,"err":0,"dur_us":1}
+{"ts":1791999566624279,"pid":10680,"ppid":14720,"tid":23400,"api":"CloseHandle","cat":"process","args":{},"ret":1,"err":0,"dur_us":1}
+{"ts":1791999566624284,"pid":10680,"ppid":14720,"tid":23400,"api":"CloseHandle","cat":"process","args":{},"ret":1,"err":0,"dur_us":84}
+{"ts":1791999566624386,"pid":10680,"ppid":14720,"tid":23400,"api":"DeleteFileA","cat":"file","args":{"path":"toy-work\\data.bin"},"ret":1,"err":0,"dur_us":242}
+{"ts":1791999566624641,"pid":10680,"ppid":14720,"tid":23400,"api":"DeleteFileA","cat":"file","args":{"path":"toy-work\\worker.log"},"ret":1,"err":0,"dur_us":91}
+{"ts":1791999566624741,"pid":10680,"ppid":14720,"tid":23400,"api":"DeleteFileA","cat":"file","args":{"path":"toy-work\\child.txt"},"ret":1,"err":0,"dur_us":76}
+{"ts":1791999566624826,"pid":10680,"ppid":14720,"tid":23400,"api":"RemoveDirectoryA","cat":"file","args":{"path":"toy-work"},"ret":1,"err":0,"dur_us":74}
